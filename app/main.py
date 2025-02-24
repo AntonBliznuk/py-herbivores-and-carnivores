@@ -12,10 +12,7 @@ class Animal:
 
     def is_dead(self) -> None:
         if self.health <= 0:
-            for i in range(len(Animal.alive)):
-                if Animal.alive[i] is self:
-                    Animal.alive.pop(i)
-                    del self
+            Animal.alive.remove(self)
 
     def __repr__(self) -> str:
         return "{Name: " + str(
